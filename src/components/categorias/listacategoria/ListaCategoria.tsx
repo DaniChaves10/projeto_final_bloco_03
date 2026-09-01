@@ -5,9 +5,7 @@ import { buscar } from "../../../services/Service";
 import CardCategoria from "../cardcategoria/CardCategoria";
 
 function ListaCategorias() {
-
-  const [categorias, setCategorias] =
-    useState<Categoria[]>([]);
+  const [categorias, setCategorias] = useState<Categoria[]>([]);
 
   async function buscarCategorias() {
     try {
@@ -22,45 +20,41 @@ function ListaCategorias() {
   }, []);
 
   return (
-    <div className="container mx-auto px-6 py-10">
-
-      <h1 className="
-        text-3xl
-        text-center
-        font-bold
-        text-teal-700
-        mb-8
-      ">
+    <div className="container mx-auto px-4 sm:px-6 py-6 sm:py-10">
+      <h1
+        className="
+          text-2xl sm:text-3xl
+          text-center
+          font-bold
+          text-teal-700
+          mb-6 sm:mb-8
+        "
+      >
         Categorias
       </h1>
 
       {categorias.length === 0 ? (
-
-        <div className="flex justify-center">
+        <div className="flex justify-center py-10">
           <ClipLoader size={50} />
         </div>
-
       ) : (
-
-        <div className="
-          grid
-          grid-cols-1
-          md:grid-cols-2
-          lg:grid-cols-3
-          gap-6
-        ">
-
+        <div
+          className="
+            grid
+            grid-cols-1
+            sm:grid-cols-2
+            lg:grid-cols-3
+            gap-4 sm:gap-6
+          "
+        >
           {categorias.map((categoria) => (
             <CardCategoria
               key={categoria.id}
               categoria={categoria}
             />
           ))}
-
         </div>
-
       )}
-
     </div>
   );
 }

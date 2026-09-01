@@ -1,18 +1,27 @@
-import { type ChangeEvent, type FormEvent, useEffect, useState } from "react";
+import {
+  type ChangeEvent,
+  type FormEvent,
+  useEffect,
+  useState
+} from "react";
+
 import { useNavigate, useParams } from "react-router-dom";
+
 import type Categoria from "../../../models/Categoria";
-import { atualizar, buscar, cadastrar } from "../../../services/Service";
+import {
+  atualizar,
+  buscar,
+  cadastrar
+} from "../../../services/Service";
 
 function FormCategoria() {
   const navigate = useNavigate();
-
   const { id } = useParams<{ id: string }>();
 
-  const [categoria, setCategoria] =
-    useState<Categoria>({
-      id: 0,
-      nome: ""
-    });
+  const [categoria, setCategoria] = useState<Categoria>({
+    id: 0,
+    nome: ""
+  });
 
   async function buscarPorId(id: string) {
     try {
@@ -20,44 +29,33 @@ function FormCategoria() {
         `/categorias/${id}`,
         setCategoria
       );
-
     } catch (error) {
-
       console.error(error);
-
     }
-
   }
 
   useEffect(() => {
-
     if (id !== undefined) {
       buscarPorId(id);
     }
-
   }, [id]);
 
   function atualizarEstado(
     e: ChangeEvent<HTMLInputElement>
   ) {
-
     setCategoria({
       ...categoria,
       [e.target.name]: e.target.value
     });
-
   }
 
   async function gerarNovaCategoria(
     e: FormEvent<HTMLFormElement>
   ) {
-
     e.preventDefault();
 
     try {
-
       if (id !== undefined) {
-
         await atualizar(
           "/categorias",
           categoria,
@@ -65,9 +63,7 @@ function FormCategoria() {
         );
 
         alert("Categoria atualizada com sucesso!");
-
       } else {
-
         await cadastrar(
           "/categorias",
           categoria,
@@ -75,36 +71,36 @@ function FormCategoria() {
         );
 
         alert("Categoria cadastrada com sucesso!");
-
       }
 
       navigate("/categorias");
-
     } catch (error) {
-
       console.error(error);
 
       alert("Erro ao salvar Categoria!");
-
     }
-
   }
 
   return (
-    <div className="
-      container
-      flex flex-col
-      items-center
-      mx-auto
-      py-10
-    ">
-
-      <h1 className="
-        text-3xl
-        font-bold
-        text-teal-700
-        mb-6
-      ">
+    <div
+      className="
+        container
+        mx-auto
+        flex flex-col
+        items-center
+        px-4 sm:px-6
+        py-6 sm:py-10
+      "
+    >
+      <h1
+        className="
+          text-2xl sm:text-3xl
+          font-bold
+          text-teal-700
+          text-center
+          mb-6
+        "
+      >
         {id
           ? "Editar Categoria"
           : "Cadastrar Categoria"}
@@ -119,14 +115,13 @@ function FormCategoria() {
           max-w-lg
           bg-white
           shadow-lg
-          p-8
+          p-4 sm:p-8
           rounded-xl
         "
       >
-
         <label
-          htmlFor="tipo"
-          className="font-medium"
+          htmlFor="nome"
+          className="font-medium text-gray-700"
         >
           Nome da Categoria
         </label>
@@ -139,6 +134,7 @@ function FormCategoria() {
           value={categoria.nome}
           onChange={atualizarEstado}
           className="
+            w-full
             border
             border-gray-300
             rounded-lg
@@ -147,11 +143,13 @@ function FormCategoria() {
             focus:ring-2
             focus:ring-teal-500
           "
+          required
         />
 
         <button
           type="submit"
           className="
+            w-full
             bg-teal-600
             hover:bg-teal-700
             text-white
@@ -159,15 +157,14 @@ function FormCategoria() {
             py-3
             rounded-lg
             transition
+            cursor-pointer
           "
         >
           {id
             ? "Atualizar"
             : "Cadastrar"}
         </button>
-
       </form>
-
     </div>
   );
 }
