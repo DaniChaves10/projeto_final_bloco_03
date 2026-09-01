@@ -1,128 +1,255 @@
-# 💊 Projeto Farmácia — React
+# 💊 Farmácia — Projeto React
 
 <p align="center">
-  <img src="./public/home.png" alt="Projeto Farmácia" width="500"/>
+  <img src="./public/home.png" alt="Página inicial do Projeto Farmácia" width="650"/>
 </p>
+
+<p align="center">
+  Frontend de uma aplicação de Farmácia desenvolvido com React, TypeScript e Tailwind CSS.
+</p>
+
+---
+
+## 🌐 Projeto Online
+
+A aplicação está publicada na Vercel e pode ser acessada através do link abaixo:
+
+🔗 **Deploy:**  
+https://projetofinalbloco03-delta.vercel.app/
+
+---
 
 ## 📖 Sobre o Projeto
 
-Este projeto foi desenvolvido como parte do **Performance Goal Check — Bloco 03**, utilizando **React, TypeScript e Tailwind CSS**.
+Este projeto foi desenvolvido como parte do **Performance Goal Check — Bloco 03**, com o objetivo de aplicar os principais conceitos estudados em React.
 
-O objetivo da aplicação é desenvolver o Frontend de um sistema de Farmácia, consumindo uma **API REST** e implementando o **CRUD completo do recurso Categoria**.
+A aplicação representa o Frontend de um sistema de **Farmácia**, consumindo uma API REST e implementando o **CRUD completo do recurso Categoria**.
 
-A aplicação permite visualizar, cadastrar, editar e excluir categorias de produtos através da integração com o Backend.
+Por meio da aplicação, é possível visualizar, cadastrar, editar e excluir categorias diretamente no Backend.
 
 ---
 
 ## 🚀 Funcionalidades
 
 - 🏠 Página inicial da Farmácia
-- 🧭 Navegação entre páginas utilizando React Router DOM
+- 🧭 Navegação entre páginas
 - 📋 Listagem de Categorias
-- ➕ Cadastro de novas Categorias
+- ➕ Cadastro de Categorias
 - ✏️ Edição de Categorias
 - 🗑️ Exclusão de Categorias
 - 🔗 Integração com API REST
-- 📱 Layout responsivo
-- ⏳ Feedback de carregamento
+- ⏳ Feedback durante as operações
 - 🎨 Interface estilizada com Tailwind CSS
+- 📱 Layout responsivo
+- 🌐 Deploy na Vercel
 
 ---
 
 ## 🛠️ Tecnologias Utilizadas
 
+<div>
+
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
+![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)
+![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
+![Axios](https://img.shields.io/badge/Axios-5A29E4?style=for-the-badge&logo=axios&logoColor=white)
+![Git](https://img.shields.io/badge/GIT-E44C30?style=for-the-badge&logo=git&logoColor=white)
+![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)
+
+</div>
+
+### Principais bibliotecas
+
 - React
 - TypeScript
 - Vite
-- Tailwind CSS
+- Tailwind CSS 4
 - React Router DOM
 - Axios
 - Phosphor Icons
 - React Spinners
-- Git
-- GitHub
 
 ---
 
 ## 🔗 Backend
 
-O Frontend consome a API da Farmácia disponibilizada através do Render.
+A aplicação consome uma API REST de Farmácia disponibilizada através do Render.
 
-**Swagger da API:**
+### Swagger
 
 https://farmacia-jk1x.onrender.com/swagger-ui/swagger-ui/index.html#/
 
-### Endpoints utilizados
+### API
+
+```text
+https://farmacia-jk1x.onrender.com
+```
+
+---
+
+## 📡 Endpoints de Categoria
 
 | Método | Endpoint | Descrição |
-|---|---|---|
-| GET | `/categorias` | Lista todas as categorias |
-| GET | `/categorias/{id}` | Busca uma categoria por ID |
-| GET | `/categorias/nome/{nome}` | Busca categorias pelo nome |
-| POST | `/categorias` | Cadastra uma nova categoria |
-| PUT | `/categorias` | Atualiza uma categoria |
-| DELETE | `/categorias/{id}` | Exclui uma categoria |
+| :---: | --- | --- |
+| `GET` | `/categorias` | Lista todas as categorias |
+| `GET` | `/categorias/{id}` | Busca uma categoria pelo ID |
+| `GET` | `/categorias/nome/{nome}` | Busca categorias pelo nome |
+| `POST` | `/categorias` | Cadastra uma nova categoria |
+| `PUT` | `/categorias` | Atualiza uma categoria |
+| `DELETE` | `/categorias/{id}` | Exclui uma categoria |
+
+---
+
+## 🔄 CRUD
+
+O projeto implementa as quatro principais operações de um CRUD:
+
+| Operação | Método HTTP | Implementação |
+| --- | :---: | --- |
+| Create | `POST` | Cadastrar Categoria |
+| Read | `GET` | Listar Categorias |
+| Update | `PUT` | Editar Categoria |
+| Delete | `DELETE` | Deletar Categoria |
 
 ---
 
 ## 📁 Estrutura do Projeto
 
 ```text
-src/
-├── components/
-│   ├── categorias/
-│   │   ├── cardcategoria/
-│   │   ├── deletarcategoria/
-│   │   ├── formcategoria/
-│   │   └── listacategoria/
-│   ├── footer/
-│   └── navbar/
+projeto_final_bloco_03/
 │
-├── models/
-│   ├── Categoria.ts
-│   └── Produto.ts
+├── public/
+│   ├── favicon.png
+│   ├── home.png
+│   └── logo.png
 │
-├── pages/
-│   └── home/
+├── src/
+│   │
+│   ├── components/
+│   │   │
+│   │   ├── categorias/
+│   │   │   ├── cardcategoria/
+│   │   │   │   └── CardCategoria.tsx
+│   │   │   │
+│   │   │   ├── deletarcategoria/
+│   │   │   │   └── DeletarCategoria.tsx
+│   │   │   │
+│   │   │   ├── formcategoria/
+│   │   │   │   └── FormCategoria.tsx
+│   │   │   │
+│   │   │   └── listacategoria/
+│   │   │       └── ListaCategoria.tsx
+│   │   │
+│   │   ├── footer/
+│   │   │   └── Footer.tsx
+│   │   │
+│   │   └── navbar/
+│   │       └── Navbar.tsx
+│   │
+│   ├── models/
+│   │   ├── Categoria.ts
+│   │   └── Produtos.ts
+│   │
+│   ├── pages/
+│   │   └── home/
+│   │       └── Home.tsx
+│   │
+│   ├── services/
+│   │   └── Service.ts
+│   │
+│   ├── App.tsx
+│   ├── index.css
+│   └── main.tsx
 │
-├── services/
-│   └── Service.ts
-│
-├── App.tsx
-├── index.css
-└── main.tsx
+├── README.md
+├── package.json
+├── tsconfig.json
+├── vercel.json
+└── vite.config.ts
 ```
+
+---
+
+## 🧭 Rotas da Aplicação
+
+| Rota | Página |
+| --- | --- |
+| `/` | Home |
+| `/home` | Home |
+| `/categorias` | Lista de Categorias |
+| `/cadastrarcategoria` | Cadastro de Categoria |
+| `/editarcategoria/:id` | Edição de Categoria |
+| `/deletarcategoria/:id` | Exclusão de Categoria |
 
 ---
 
 ## 🌿 Organização das Branches
 
-O desenvolvimento do projeto foi dividido em etapas:
+O desenvolvimento foi dividido em etapas através de branches.
 
 ### `01_Componente_Home_navbar_footer`
 
-Construção e estilização dos componentes:
+Desenvolvimento e estilização dos componentes:
 
-- Home
 - Navbar
+- Home
 - Footer
+- Flexbox
+- Grid
+- Tailwind CSS
 
 ### `02_Rotas`
 
-Configuração das rotas da aplicação utilizando **React Router DOM**.
+Configuração da navegação utilizando **React Router DOM**.
+
+Foram implementadas as primeiras rotas da aplicação e os links de navegação.
 
 ### `03_CRUD_Categoria`
 
-Implementação do CRUD completo de Categoria:
+Implementação do CRUD completo de Categoria e integração com o Backend utilizando Axios.
 
-- GET
-- POST
-- PUT
-- DELETE
+Foram implementadas as operações:
+
+```text
+GET
+POST
+PUT
+DELETE
+```
 
 ---
 
-## ⚙️ Como executar o projeto
+## 🧠 Conceitos Aplicados
+
+Durante o desenvolvimento foram utilizados conceitos como:
+
+- Componentização
+- Props
+- Interfaces TypeScript
+- Models
+- Services
+- Hooks
+- `useState`
+- `useEffect`
+- `useParams`
+- `useNavigate`
+- React Router DOM
+- Axios
+- Requisições assíncronas
+- API REST
+- CRUD
+- Relacionamento entre entidades
+- Flexbox
+- CSS Grid
+- Tailwind CSS
+- Responsividade
+- Git e GitHub
+- Deploy
+
+---
+
+## ⚙️ Como executar o projeto localmente
 
 ### 1. Clone o repositório
 
@@ -130,7 +257,7 @@ Implementação do CRUD completo de Categoria:
 git clone https://github.com/DaniChaves10/projeto_final_bloco_03.git
 ```
 
-### 2. Entre na pasta
+### 2. Acesse a pasta
 
 ```bash
 cd projeto_final_bloco_03
@@ -142,7 +269,7 @@ cd projeto_final_bloco_03
 npm install
 ```
 
-### 4. Configure a API
+### 4. Configure a variável de ambiente
 
 Crie um arquivo `.env` na raiz do projeto:
 
@@ -150,82 +277,41 @@ Crie um arquivo `.env` na raiz do projeto:
 VITE_API_URL=https://farmacia-jk1x.onrender.com
 ```
 
-### 5. Execute o projeto
+### 5. Execute a aplicação
 
 ```bash
 npm run dev
 ```
 
-A aplicação estará disponível normalmente em:
-
-```text
-http://localhost:5173
-```
+A aplicação será executada localmente pelo Vite.
 
 ---
 
-## 📸 Projeto
+## ☁️ Deploy
 
-A aplicação possui uma página inicial responsiva e telas específicas para gerenciamento das categorias.
+O Frontend foi publicado utilizando a **Vercel**.
 
-### Home
+🔗 **Aplicação:**  
+https://projetofinalbloco03-delta.vercel.app/
 
-Página inicial da Farmácia com acesso à listagem de categorias.
+O Backend está hospedado no **Render**.
 
-### Categorias
-
-Exibe todas as categorias cadastradas na API, disponibilizando as opções de edição e exclusão.
-
-### Cadastrar Categoria
-
-Permite cadastrar uma nova categoria.
-
-### Editar Categoria
-
-Permite alterar os dados de uma categoria existente.
-
-### Deletar Categoria
-
-Solicita a confirmação do usuário antes da exclusão da categoria.
-
----
-
-## 🎯 Conceitos Aplicados
-
-Durante o desenvolvimento foram aplicados conceitos como:
-
-- Componentização com React
-- Props
-- Hooks (`useState` e `useEffect`)
-- React Router DOM
-- `useNavigate`
-- `useParams`
-- Consumo de API REST
-- Axios
-- Requisições assíncronas
-- CRUD
-- Interfaces com TypeScript
-- Relacionamento entre Models
-- Flexbox
-- CSS Grid
-- Tailwind CSS
-- Responsividade
-- Versionamento com Git e GitHub
+🔗 **Swagger:**  
+https://farmacia-jk1x.onrender.com/swagger-ui/swagger-ui/index.html#/
 
 ---
 
 ## 👨‍💻 Autor
 
-**Daniel Araujo**
+### Daniel Araujo
 
-Desenvolvido como parte das atividades de Desenvolvimento Full Stack.
+Desenvolvedor Full Stack em formação, com foco em desenvolvimento de aplicações utilizando Java, Spring Boot, React e TypeScript.
 
-### GitHub
-
-[@DaniChaves10](https://github.com/DaniChaves10)
+🔗 **GitHub:**  
+https://github.com/DaniChaves10
 
 ---
 
 <p align="center">
-  Desenvolvido com 💚 e React ⚛️
+  Desenvolvido com 💚, React ⚛️ e TypeScript.
 </p>
