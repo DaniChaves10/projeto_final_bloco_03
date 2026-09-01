@@ -27,6 +27,11 @@ function Footer() {
         </p>
 
         <div className="flex gap-4">
+          <a
+          href="https://instagram.com/daniel_chaves20"
+          target="_blank"
+          rel="noopener noreferrer"
+          >
           <InstagramLogo
             size={30}
             weight="bold"
@@ -36,7 +41,12 @@ function Footer() {
               transition
             "
           />
-
+          </a>
+          <a
+          href="https://www.linkedin.com/in/daniel-araujo10/"
+          target="_blank"
+          rel="noopener noreferrer"
+          >
           <LinkedinLogo
             size={30}
             weight="bold"
@@ -46,7 +56,12 @@ function Footer() {
               transition
             "
           />
-
+          </a>
+          <a
+          href="https://github.com/DaniChaves10"
+          target="_blank"
+          rel="noopener noreferrer"
+          >
           <GithubLogo
             size={30}
             weight="bold"
@@ -56,6 +71,7 @@ function Footer() {
               transition
             "
           />
+          </a>
         </div>
 
         <p className="text-xs sm:text-sm text-teal-100">
