@@ -41,7 +41,7 @@ function Home() {
                   transition
                 "
               >
-                Cadastrar Produto
+                Ver Categorias
               </Link>
             </div>
 
@@ -49,7 +49,7 @@ function Home() {
 
           <div className="flex justify-center">
             <img
-              src="/public/home.png"
+              src="/home.png"
               alt="Farmácia"
               className="w-full max-w-md"
             />

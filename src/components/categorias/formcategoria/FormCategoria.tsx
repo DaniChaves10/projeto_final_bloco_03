@@ -128,7 +128,7 @@ function FormCategoria() {
           htmlFor="tipo"
           className="font-medium"
         >
-          Tipo da Categoria
+          Nome da Categoria
         </label>
 
         <input
