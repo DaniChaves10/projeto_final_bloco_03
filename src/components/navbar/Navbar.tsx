@@ -9,7 +9,7 @@ function Navbar() {
           to="/home"
           className="flex items-center gap-2 text-2xl font-bold"
         >
-          <img  width={64} src="/public/favicon.png" alt="Logo Farmacia" /> 
+          <img  width={64} src="/favicon.png" alt="Logo Farmacia" /> 
           Farmácia
         </Link>
 
